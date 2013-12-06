@@ -1,0 +1,28 @@
+{
+  "name": "dagger",
+  "version": "0.0.15",
+  "description": "Dagger is one half of a minimal API server layer for node.js, with emphasis on minimal.",
+  "main": "Dagger.js",
+  "scripts": {
+    "test": "true"
+  },
+  "repository": "http://github.com/kuym/dagger.git",
+  "keywords": [
+    "dagger",
+    "minimal",
+    "web",
+    "server",
+    "framework",
+    "api",
+    "router",
+    "static",
+    "file",
+    "tiny",
+    "compact"
+  ],
+  "author": {
+    "name": "Kuy Mainwaring"
+  },
+  "license": "CC-SA-BY-3.0",
+  "readmeFilename": "README.md",
+}
