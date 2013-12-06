@@ -5,6 +5,8 @@ var url = require("url");
 var util = require("util");
 var fs = require("fs");
 
+var formidable = require("formidable");
+
 ////////////////////////////////////////////////////////////////
 
 function _extend(obj)
@@ -268,7 +270,18 @@ function APIEndpoint(handler, context, type)
 		
 		try
 		{
-			handler.call(context || this, request, response, request.args, finish);
+			if(request.method == "POST")
+			{
+				var form = new formidable.IncomingForm();
+				form.parse(request, function(err, fields, files)
+				{
+					request.args.post = fields;
+					request.args.files = files;
+					handler.call(context || this, request, response, request.args, finish);
+				});
+			}
+			else
+				handler.call(context || this, request, response, request.args, finish);
 		}
 		catch(err)
 		{
