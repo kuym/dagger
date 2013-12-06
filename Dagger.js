@@ -58,7 +58,7 @@ Server.prototype =
 		request.args =
 		{
 			query: args.query
-		};
+		};	//gets extended during request processing
 		
 		var urlParts = args.pathname.split("/").filter(function(p){return(p != "");});
 		
@@ -100,7 +100,7 @@ function Server(api, port)
 
 ////////////////////////////////////////////////////////////////
 
-//simplest practical static file server with 0 features, used if you don't want to include anything else
+//simplest practical static file server with zero features, used if you don't want to include anything else
 
 function createStaticFileServer(base, defaultURL)
 {
@@ -223,8 +223,7 @@ function Router(api)
 		}
 };
 
-//handler = function(request, response, arg0, arg1 ... argN, query, post)
-//type = {"json"*, "raw"}	*default
+////////////////////////////////////////////////////////////////
 
 var kAPIEndpointTypes =
 {
